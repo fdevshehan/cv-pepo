@@ -129,6 +129,11 @@
       left: 100%;
     }
 
+    .nav-btn:disabled {
+      opacity: 0.7;
+      cursor: not-allowed;
+    }
+
     @keyframes fadeIn {
       from { opacity: 0; }
       to { opacity: 1; }
@@ -157,7 +162,7 @@
   <div class="container">
     <div class="typing-container">
       <div class="typing" id="typing"></div>
-     <!--<div class="subtitle">Discover my journey and achievements</div>-->
+      <!--<div class="subtitle">Discover my journey and achievements</div>-->
     </div>
 
     <div class="profile-card">
@@ -200,12 +205,21 @@
     }
 
     function navigateTo(page) {
+      // Temporarily disable buttons and apply visual feedback
       document.querySelectorAll('.nav-btn').forEach(btn => {
         btn.disabled = true;
         btn.style.opacity = '0.7';
       });
+
+      // Open the page in a new tab
+      window.open(page, '_blank');
+
+      // Re-enable buttons after a short delay
       setTimeout(() => {
-        window.location.href = page;
+        document.querySelectorAll('.nav-btn').forEach(btn => {
+          btn.disabled = false;
+          btn.style.opacity = '1';
+        });
       }, 300);
     }
 
@@ -214,4 +228,4 @@
     });
   </script>
 </body>
-</html>
+</html> 
