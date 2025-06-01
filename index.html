@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="https://fdevshehan.github.io/cv-pepo/prof.png" type="image/png" />
+  <title>Shehan Thilakarathna | Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+
+    body {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+      overflow-x: hidden;
+    }
+
+    .container {
+      max-width: 800px;
+      width: 100%;
+      margin: 0 auto;
+    }
+
+    .typing-container {
+      text-align: center;
+      margin: 2rem 0;
+    }
+
+    .typing {
+      font-size: 2rem;
+      font-weight: 700;
+      color: #1e3a8a;
+      line-height: 1.2;
+      opacity: 0;
+      animation: fadeIn 1s ease-out forwards;
+    }
+
+    .subtitle {
+      font-size: 1.1rem;
+      color: #4b5563;
+      margin-top: 0.5rem;
+      opacity: 0;
+      animation: fadeIn 1s ease-out 0.3s forwards;
+    }
+
+    .profile-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      margin-bottom: 2rem;
+      transform: translateY(20px);
+      opacity: 0;
+      animation: slideUp 0.8s ease-out 0.2s forwards;
+    }
+
+    .profile-pic {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #3b82f6;
+      box-shadow: 0 4px 20px rgba(59, 130, 246, 0.3);
+      transition: transform 0.3s ease;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .btn-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1rem;
+      padding: 1rem;
+    }
+
+    .nav-btn {
+      background: #3b82f6;
+      border: none;
+      border-radius: 12px;
+      padding: 1rem;
+      color: white;
+      font-weight: 600;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    .nav-btn:nth-child(1) { animation: slideUp 0.8s ease-out 0.4s forwards; }
+    .nav-btn:nth-child(2) { animation: slideUp 0.8s ease-out 0.5s forwards; }
+    .nav-btn:nth-child(3) { animation: slideUp 0.8s ease-out 0.6s forwards; }
+    .nav-btn:nth-child(4) { animation: slideUp 0.8s ease-out 0.7s forwards; }
+    .nav-btn:nth-child(5) { animation: slideUp 0.8s ease-out 0.8s forwards; }
+    .nav-btn:nth-child(6) { animation: slideUp 0.8s ease-out 0.9s forwards; }
+
+    .nav-btn:hover {
+      background: #2563eb;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(59, 130, 246, 0.4);
+    }
+
+    .nav-btn::after {
+      content: '';
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.2);
+      top: 0;
+      left: -100%;
+      transition: left 0.3s ease;
+    }
+
+    .nav-btn:hover::after {
+      left: 100%;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
+    @media (max-width: 768px) {
+      .typing {
+        font-size: 1.5rem;
+      }
+      .profile-pic {
+        width: 140px;
+        height: 140px;
+      }
+      .btn-container {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="typing-container">
+      <div class="typing" id="typing"></div>
+     <!--<div class="subtitle">Discover my journey and achievements</div>-->
+    </div>
+
+    <div class="profile-card">
+      <img src="https://fdevshehan.github.io/cv-pepo/prof.png" alt="Profile Picture" class="profile-pic" />
+    </div>
+
+    <div class="btn-container">
+      <button class="nav-btn" onclick="navigateTo('PI.html')" aria-label="View Personal Information">
+        Personal Information
+      </button>
+      <button class="nav-btn" onclick="navigateTo('https://drive.google.com/file/d/1bx7gLHiMV-OhvNviSXvLm7yZr_TDgZv_/view?usp=drivesdk')" aria-label="View G.C.E. Ordinary Level (O/L) Results">
+        G.C.E. Ordinary Level (O/L) Results
+      </button>
+      <button class="nav-btn" onclick="navigateTo('https://drive.google.com/file/d/1sQa85TZ5ZnAaGpyMADYIeRglQHO88San/view?usp=drivesdk')" aria-label="View G.C.E. Advance Level (A/L) Results">
+        G.C.E. Advance Level (A/L) Results
+      </button>
+      <button class="nav-btn" onclick="navigateTo('https://drive.google.com/file/d/1-6CEw1uapHRSMYLN5kfv-Hx6wKc1X0gL/view?usp=drivesdk')" aria-label="View Python for beginner Certificate">
+        Python for Beginner Certificate
+      </button>
+      <button class="nav-btn" onclick="navigateTo('https://drive.google.com/file/d/1-OqWWkbzAVeS2VFhKqkDc3PvKn-0YOBX/view?usp=drivesdk')" aria-label="View Web design for beginner Certificate">
+        Web Design for Beginner Certificate
+      </button>
+      <button class="nav-btn" onclick="navigateTo('my-pro.html')" aria-label="View My Projects">
+        My Projects
+      </button>
+    </div>
+  </div>
+
+  <script>
+    const message = "A warm welcome to you for arriving to explore the information of Shehan Thilakarathna.";
+    let i = 0;
+    const speed = 50;
+
+    function typeWriter() {
+      if (i < message.length) {
+        document.getElementById("typing").textContent += message.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+
+    function navigateTo(page) {
+      document.querySelectorAll('.nav-btn').forEach(btn => {
+        btn.disabled = true;
+        btn.style.opacity = '0.7';
+      });
+      setTimeout(() => {
+        window.location.href = page;
+      }, 300);
+    }
+
+    window.addEventListener('load', () => {
+      typeWriter();
+    });
+  </script>
+</body>
+</html>
